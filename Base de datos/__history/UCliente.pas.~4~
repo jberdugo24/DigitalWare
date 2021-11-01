@@ -1,0 +1,59 @@
+unit UCliente;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Edit;
+
+type
+  TfrmCliente = class(TForm)
+    txtcodigo: TEdit;
+    txtnombre: TEdit;
+    txttipodocumento: TEdit;
+    txtdocumento: TEdit;
+    txtcontacto: TEdit;
+    txtemail: TEdit;
+    txtnombrelegal: TEdit;
+    txttelefono: TEdit;
+    btnnuevo: TButton;
+    btnmodificar: TButton;
+    btninsertar: TButton;
+    btneliminar: TButton;
+    Button5: TButton;
+    procedure btninsertarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+
+
+  end;
+
+var
+  frmCliente: TfrmCliente;
+
+implementation
+
+{$R *.fmx}
+
+uses UDataModule;
+
+{ TfrmCliente }
+
+
+
+procedure TfrmCliente.btninsertarClick(Sender: TObject);
+begin
+  if DataModulo.insertar(txtcodigo.Text,txtnombre.Text,txttipodocumento.Text)) = True   Then
+  begin
+    showMessage ('Registro insertado: '+txtnombre.Text);
+  end
+  else
+  begin
+     showMessage ('Registro NO insertado: '+txtnombre.Text);
+  end;
+end;
+
+end.

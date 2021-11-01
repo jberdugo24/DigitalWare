@@ -1,0 +1,63 @@
+unit Fibo;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    txtTermino: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    txtFib: TEdit;
+    Label2: TLabel;
+    ListBox1: TListBox;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+  //implementacion de la funcion recursiva
+function Fibonacci(n:integer):Integer;
+begin
+  if (n=0) or (n=1) then
+    Fibonacci := 1
+  else
+    Fibonacci := Fibonacci(n-1) + Fibonacci(n-2);
+end;
+
+   //utilizacion de la funcion
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  I, numero:integer;
+begin
+     numero := strtoint(txtTermino.Text);
+ //    txtFib.Text := inttostr(Fibonacci(numero));
+ //    a:= 1;
+ //    b:= 1;
+ //    c:= 0;
+     listBox1.Clear;
+//     for I := 1 to numero do
+//     begin
+//       a:=b;
+//       b:=c;
+//       c:=a+b;
+//       ListBox1.Items.Add(IntToStr(c));
+//     end;
+
+for I := 0 to numero-1 do
+  begin
+    ListBox1.Items.Add(intToStr(Fibonacci(I)));   //Aquí se utiliza la función
+  end;
+end;
+end.

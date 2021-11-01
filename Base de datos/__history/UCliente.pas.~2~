@@ -1,0 +1,46 @@
+unit UCliente;
+
+interface
+
+uses
+  System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
+  FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
+  FMX.Controls.Presentation, FMX.Edit;
+
+type
+  TfrmCliente = class(TForm)
+    txtcodigo: TEdit;
+    txtnombre: TEdit;
+    txttipodocumento: TEdit;
+    txtdocumento: TEdit;
+    txtcontacto: TEdit;
+    txtemail: TEdit;
+    txtnombrelegal: TEdit;
+    txttelefono: TEdit;
+    btnnuevo: TButton;
+    btnmodificar: TButton;
+    btninsertar: TButton;
+    btneliminar: TButton;
+    Button5: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    function eliminar (id:string):boolean;
+
+  end;
+
+var
+  frmCliente: TfrmCliente;
+
+implementation
+
+{$R *.fmx}
+
+uses UDataModule;
+
+{ TfrmCliente }
+
+
+
+end.

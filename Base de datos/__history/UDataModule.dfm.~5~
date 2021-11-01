@@ -1,0 +1,17 @@
+object DataModulo: TDataModulo
+  OldCreateOrder = False
+  Height = 306
+  Width = 347
+  object conexion: TFDConnection
+    Params.Strings = (
+      'Database=DigitalWareBD'
+      'User_Name=sa'
+      'Server=SURFACE-JB\SQLEXPRESS'
+      'Password=1234'
+      'DriverID=MSSQL')
+    Connected = True
+    LoginPrompt = False
+    Left = 48
+    Top = 16
+  end
+end
